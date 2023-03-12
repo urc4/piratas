@@ -11,7 +11,7 @@ class Level:
 
         # sprite group setup
         self.all_sprites = pygame.sprite.Group()
-        self.player = Player((100, 100), [self.all_sprites])
+        self.player = Player((WIDTH/2, HEIGHT/2), [self.all_sprites])
         self.all_sprites.add(self.player)
 
     def run(self):
