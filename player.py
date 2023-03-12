@@ -10,10 +10,16 @@ class Player(pygame.sprite.Sprite):
         self.color = (255,0,0)
         self.draw()
         self.rect = self.image.get_rect()
-        self.rect.center = pos
+        self.velocity = [0,0]
+        self.position = pos
+        self.angle = 0 # in radians
+        self.rect.center = self.position
         
     def draw(self):
         pygame.draw.polygon(self.image,self.color,self.vertices)
 
     def update(self):
-        pass
+        self.position[0] += self.velocity[0]  
+        self.position[1] += self.velocity[1]  
+        self.rect.center = self.position
+        self.draw()

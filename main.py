@@ -2,7 +2,7 @@ import pygame
 import sys
 from settings import *
 from level import Level
-
+from debug import *
 
 class Game:
     def __init__(self):
@@ -21,6 +21,7 @@ class Game:
 
             self.screen.fill('blue')
             self.level.run()
+            debug(pygame.key.get_pressed()[pygame.K_UP])
             pygame.display.update()
             self.clock.tick(FPS)
 
